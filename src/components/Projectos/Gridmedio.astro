@@ -1,0 +1,234 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<style>
+  .tarjet {
+    height: 52px;
+    width: 520px;
+    background-color: #010114;
+    border-radius: 6%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tarjet::before {
+    content: "";
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-image: conic-gradient(
+      rgb(208, 255, 0) 10deg,
+      transparent 120deg
+    );
+    animation: rotar 4s linear infinite;
+  }
+
+  @keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  .tarjet::after {
+    content: "";
+    position: absolute;
+    height: 530px;
+    width: 518px;
+    background-color: #02061f;
+    border-radius: 6%;
+  }
+  .thumbnail {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .thumbnail:hover {
+    transform: scale(1.1);
+  }
+
+  .main-image {
+    width: 100%;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+
+  .fade-in {
+    opacity: 1;
+  }
+
+  .iconon {
+    position: relative;
+  }
+  .icono2 {
+    transition: filter 0.3s;
+  }
+  /* Efecto Hover Neon */
+  .iconon:hover .icono2 {
+    filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+    filter: drop-shadow(0 0 15px rgb(10, 96, 158));
+    opacity: 90%;
+  }
+</style>
+<div class="flex flex-wrap mx-1">
+  <div
+    class="w-full lg:w-1/2  px-2 mb-2 pt-2 rounded-lg border-[#5c5858]  
+    border-[1px]"
+  >
+    <div class="flex flex-wrap -mx-2">
+      <div class="w-full lg:w-[20%] px-2 mb-2">
+        <div class="">
+          <div class="flex flex-row lg:flex-wrap mx-2">
+            <div class="w-full mb-2">
+              <div class="dark:bg-oscur bg-primari">
+                <img
+                  src="/assets/images/reloj.jpg"
+                  alt="laptop"
+                  class="h-24 thumbnail rounded-md"
+                />
+              </div>
+            </div>
+            <div class="w-full mb-2">
+              <div class="dark:bg-oscur bg-primari">
+                <img
+                  src="/assets/images/table.jpg"
+                  alt="celular"
+                  class="h-24 thumbnail rounded-md"
+                />
+              </div>
+            </div>
+            <div class="w-full mb-2">
+              <div class="dark:bg-oscur bg-primari">
+                <img
+                  src="/assets/images/celu.jpg"
+                  alt="tablet"
+                  class="h-24 thumbnail rounded-md"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Segunda columna de la primera fila -->
+      <div class="w-full lg:w-[80%] px-2 mb-2">
+        <div class="dark:bg-oscur bg-primari">
+          <img
+            src="/assets/images/apptoros.jpg"
+            alt=""
+            class="rounded-md"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Segunda fila con contenido que se acople -->
+    <div class="flex flex-wrap -mx-2">
+      <div class="w-full px-2 mb-4">
+        <div class="dark:bg-oscur bg-primari p-4">
+          <h2 class="pb-2 text-letra">APP RSTAURANTE 7TOROS</h2>
+          <div class="flex pb-2 iconon">
+            <p class="pr-10 dark:text-primari text-oscur">Desarrollo en:</p>
+            <Icon class="size-11 px-1 icono2" name="html5" />
+            <Icon class="size-11 px-1 icono2" name="css" />
+            <Icon class="size-11 px-1 icono2" name="javascript" />
+            <Icon class="size-11 px-1 icono2" name="railway_dark" />
+            <Icon class="size-11 px-1 icono2" name="postgresql" />
+            <Icon class="size-11 px-1 icono2" name="django" />
+          </div>
+          <p class="text-oscur dark:text-primari">Este proyecto fue realizado con el fin de agilizar las ordenes y pedidos al publico en general 
+            debido a su amplia clientela y tambien se agrego una pasarela de pagos para pedidos y compras en linea del menu.
+          </p>
+          <div class="flex pt-4 justify-end">
+            <a  href="" class="text-primari text-[21px] bg-oscur hover:text-letra border border-letra hover:bg-oscur focus:ring-4 focus:outline-none focus:ring-[#1b1e4e] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-letra dark:text-letra dark:hover:text-primari dark:hover:bg-[rgb(21,32,61)] dark:focus:ring-letra flex"><Icon class="font-bold size-6" name="cv" />| Sitio Web</a>
+            <a  href="https://github.com/sergio-14/appdjrest" class="text-primari text-[21px] bg-oscur hover:text-letra border border-letra hover:bg-oscur focus:ring-4 focus:outline-none focus:ring-[#1b1e4e] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-letra dark:text-letra dark:hover:text-primari dark:hover:bg-[rgb(21,32,61)] dark:focus:ring-letra flex"><Icon class="font-bold size-6" name="github" />| Repositiorio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full sm:w-1/2 px-2 mb-2 pt-2 rounded-lg border-[#5c5858] border-[1px]"
+  >
+    <div class="flex flex-wrap -mx-2">
+      <div class="w-full lg:w-[20%] px-2 mb-2">
+        <div class="">
+          <div class="flex flex-row lg:flex-wrap mx-2">
+            <div class="w-full mb-2 ">
+              <div class="dark:bg-oscur bg-primari">
+                <img
+                  src="/assets/images/uab1.jpg"
+                  alt="laptop"
+                  class="h-24 full thumbnail rounded-md"
+                />
+              </div>
+            </div>
+            <div class="w-full mb-2">
+              <div class="dark:bg-oscur bg-primari">
+                <img
+                  src="/assets/images/uab2.jpg"
+                  alt="celular"
+                  class="h-24 thumbnail rounded-md"
+                />
+              </div>
+            </div>
+            <div class="w-full mb-2">
+              <div class="dark:bg-oscur bg-primari">
+                <img
+                  src="/assets/images/uab3.jpg"
+                  alt="tablet"
+                  class="h-24 thumbnail rounded-md"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Segunda columna de la primera fila -->
+      <div class="w-full lg:w-[80%] px-2 mb-2">
+        <div class="dark:bg-oscur bg-primari">
+          <img
+            src="/assets/images/uab.jpg"
+            alt=""
+            class="rounded-md"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- Segunda fila con contenido que se acople -->
+    <div class="flex flex-wrap -mx-2">
+      <div class="w-full px-2 mb-4">
+        <div class="dark:bg-oscur bg-primari p-4">
+          <h2 class="pb-2 text-letra">SITIO WEB PRINCIPAL DE LA C.I.S  U.A.B</h2>
+          <div class="flex pb-2 iconon">
+            <p class="pr-10 dark:text-primari text-oscur">Desarrollo en:</p>
+            <Icon class="size-11 px-1 icono2" name="bootstrap" />
+            <Icon class="size-11 px-1 icono2" name="tailwindcss" />
+            <Icon class="size-11 px-1 icono2" name="railway_dark" />
+            <Icon class="size-11 px-1 icono2" name="postgresql" />
+            <Icon class="size-11 px-1 icono2" name="django" />
+          </div>
+          <p class="text-oscur dark:text-primari">Este proyecto fue realizado con el fin de 
+            optimizar las funcines y mejorar el servicio al panel administrativo de la universidad 
+            debido a su amplio personal estudiantil.
+          </p>
+          <div class="flex pt-4 justify-end">
+            <a type="button" class="text-primari text-[21px] bg-oscur hover:text-letra border border-letra hover:bg-oscur focus:ring-4 focus:outline-none focus:ring-[#1b1e4e] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-letra dark:text-letra dark:hover:text-primari dark:hover:bg-[rgb(21,32,61)] dark:focus:ring-letra flex"><Icon class="font-bold size-6" name="cv" />| Sitio Web</a>
+            <a type="button" class="text-primari text-[21px] bg-oscur hover:text-letra border border-letra hover:bg-oscur focus:ring-4 focus:outline-none focus:ring-[#1b1e4e] font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-letra dark:text-letra dark:hover:text-primari dark:hover:bg-[rgb(21,32,61)] dark:focus:ring-letra flex"><Icon class="font-bold size-6" name="github" />| Repositiorio</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<span class="absolute w-[100px] h-[140px] lg:h-[200px] lg:w-[300px] rounded-full dark:bg-gradient-to-tr dark:from-luz dark:to-luz1 bg-gradient-to-tr from-[#b2ebdd] to-[#7a7a6f] opacity-25 blur-3xl left-14"
+></span>
+

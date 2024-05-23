@@ -1,0 +1,139 @@
+---
+import { Icon } from "astro-icon/components";
+import Gridmedio from "./Gridmedio.astro";
+---
+
+<style>
+  .tarjeta {
+    height: 296px;
+    width: 330.66px;
+    background-color: #010114;
+    border-radius: 6%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tarjeta::before {
+    content: "";
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-image: conic-gradient(
+      rgba(255, 145, 2, 0.767) 10deg,
+      transparent 120deg
+    );
+    animation: rotar 15s linear infinite;
+  }
+
+  @keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .tarjeta::after {
+    content: "";
+    position: absolute;
+    width: 328.66px;
+    height: 294px;
+    background-image: linear-gradient(rgb(7, 11, 58),rgb(3, 0, 17));
+    border-radius: 6%;
+  }
+
+  @media (max-width: 768px) {
+  .tarjeta {
+    width: 450px;
+  }
+
+  .tarjeta::before {
+    height: 600px;
+    width: 600px;
+  }
+
+  .tarjeta::after {
+    width: 448px;
+  }
+}
+
+
+
+  .iconon {
+    position: relative;
+  }
+  .icono2 {
+    transition: filter 0.3s;
+  }
+  /* Efecto Hover Neon */
+  .iconon:hover .icono2 {
+    filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+    filter: drop-shadow(0 0 10px rgb(5, 70, 117));
+    opacity: 90%;
+  }
+</style>
+
+<div class="container mx-auto lg:p-32 p-4">
+  <!-- Primera fila: 3 columnas -->
+  <div class="flex flex-wrap">
+    <div class="lg:w-1/3 w-full px-2 mb-4 mx-1 tarjeta">
+      <div class="p-4 z-10">
+        <h2 class="pb-2 text-letra">APP TRINIDAD TOURS</h2>
+        <div class="flex pb-2 iconon">
+          <p class="pr-10">Desarrollo en:</p>
+          <Icon class="size-11 px-1 icono2" name="astro" />
+          <Icon class="size-11 px-1 icono2" name="tailwindcss" />
+          <Icon class="size-11 px-1 icono2" name="typescript" />
+        </div>
+        <div>
+          <img
+            src="/assets/images/turtrini.jpg"
+            class="rounded-[9px] w-80 h-48"
+            alt="logo"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="w-full sm:w-1/3 px-2 mx-1 mb-4 tarjeta">
+      <div class="p-4 z-10">
+        <h2 class="pb-2 text-letra">APP SITIO WEB ABOGADOS</h2>
+        <div class="flex iconon pb-2">
+          <p class="pr-10 ">Desarrollo en:</p>
+          <Icon class="size-11 px-1 icono2" name="html5" />
+          <Icon class="size-11 px-1 icono2" name="css" />
+          <Icon class="size-11 px-1 icono2" name="javascript" />
+        </div>
+        <div>
+          <img
+            src="/assets/images/bufet.jpg"
+            class="rounded-[9px] w-80 h-48"
+            alt="logo"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="w-full sm:w-1/3 px-2 mb-4 mx-1 tarjeta">
+      <div class="p-4 z-10">
+        <h2 class="pb-2 text-letra">APP COMENTARIOS BLOG</h2>
+        <div class="flex pb-2 iconon">
+          <p class="pr-10">Desarrollo en:</p>
+          <Icon class="size-11 px-1 icono2" name="django" />
+          <Icon class="size-11 px-1 icono2" name="postgresql" />
+          <Icon class="size-11 px-1 icono2" name="bootstrap" />
+        </div>
+        <div>
+          <img
+            src="/assets/images/coment.jpg"
+            class="rounded-[9px] w-80 h-48"
+            alt="logo"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <Gridmedio />
+</div>

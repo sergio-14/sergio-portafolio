@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components"
+---
+<style>
+    #playPauseButton{
+        font-size: 37px;
+    }
+</style>
+ <!--aqui ponme el reporductor de musisca -->
+ <audio id="audioPlayer"></audio>
+ <div id="musicControls">
+   <button id="prevButton">
+     <Icon name="left" class="size-8 pt-2" />
+   </button>
+   <button id="playPauseButton">
+     <Icon name="play" class="size-8 pt-2" />
+   </button>
+   <button id="nextButton">
+     <!-- Icono de "siguiente" -->
+     <Icon name="right" class="size-8 pt-2" />
+   </button>
+ </div>
+
+ <script>
+    const audioPlayer = document.getElementById(
+      "audioPlayer"
+    ) as HTMLAudioElement;
+    const playPauseButton = document.getElementById(
+      "playPauseButton"
+    ) as HTMLButtonElement;
+    const prevButton = document.getElementById("prevButton") as HTMLElement;
+    const nextButton = document.getElementById("nextButton") as HTMLElement;
+  
+    let isPlaying = false;
+    let currentTrackIndex = 0;
+    const tracks = [
+      "/music/abjzzauno.mp3",
+      "/music/abjzzatrue.mp3",
+      "/music/cry.mp3",
+      "/music/sparks.mp3",
+      "/music/lii.mp3",
+      "/music/lui.mp3",
+      // Agrega aquí más URLs de tus pistas de música
+    ];
+  
+    function updatePlayPauseButton() {
+      playPauseButton.innerHTML = isPlaying ? "▶" : "II";
+    }
+  
+    function playPause() {
+      if (isPlaying) {
+        audioPlayer.pause();
+      } else {
+        audioPlayer.play();
+      }
+      isPlaying = !isPlaying;
+      updatePlayPauseButton();
+    }
+  
+    function playNext() {
+      currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+      audioPlayer.src = tracks[currentTrackIndex];
+      audioPlayer.play();
+      isPlaying = true;
+      updatePlayPauseButton();
+    }
+  
+    function playPrev() {
+      currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+      audioPlayer.src = tracks[currentTrackIndex];
+      audioPlayer.play();
+      isPlaying = true;
+      updatePlayPauseButton();
+    }
+  
+    function playNextTrackOrStop() {
+      if (currentTrackIndex === tracks.length - 1) {
+        // Si es la última pista, detener la reproducción o realizar alguna otra acción
+        // Por ejemplo, aquí podrías reiniciar la reproducción desde la primera pista:
+        currentTrackIndex = 0;
+        audioPlayer.src = tracks[currentTrackIndex];
+        isPlaying = false;
+        updatePlayPauseButton();
+      } else {
+        // Reproducir la siguiente pista
+        playNext();
+      }
+    }
+  
+    audioPlayer.src = tracks[currentTrackIndex]; // Establecer la primera pista
+    playPauseButton.addEventListener("click", playPause);
+    nextButton.addEventListener("click", playNext);
+    prevButton.addEventListener("click", playPrev);
+    audioPlayer.addEventListener("ended", playNextTrackOrStop);
+  </script>
+  

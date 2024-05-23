@@ -1,0 +1,126 @@
+---
+import Header from '../components/Header.astro';
+import '@fontsource/dm-serif-display';
+import Footer from '../components/Footer.astro';
+import Music from '../components/inicio/Music.astro';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="snap-none   transition-all duration-300 bg-claro dark:bg-oscur">
+		<Header />
+		<slot />
+		<Footer />
+		<button id="toggleButton" class="heartbeat fixed bottom-4 left-4 p-2 bg-blue-500 text-white rounded-full shadow-lg">
+			<Icon name="rolas" class="lg:size-12 size-12  rounded-full bg-[#0c1e29]" />
+		</button>
+		
+		  <!-- Contenedor flotante -->
+		<div id="floatingContainer" class="fixed bottom-0 left-14 m-4 p-4 dark:bg-[#bfbfc7a6] bg-[#22222444] dark:border-[white] border-[#302f31]  border-[1px]  text-white rounded-[20px] shadow-lg fade hidden">
+			<img src="/assets/images/musiclogo.gif" class="lg:w-[250px] lg:h-[130px] rounded-lg " alt="">
+			<p class="pb-2 text-oscur dark:text-[#f9ffc5] text-center">Visita mi Spotify..</p>
+			<div class="flex">
+				<Music />
+				<img src="/assets/images/puntoss.gif" class="lg:w-10 lg:h-10 " alt="">
+				<img src="/assets/images/puntoss.gif" class="lg:w-10 lg:h-10 " alt="">
+				<button id="closeButton" class="ml-4 p-1  text-white rounded-full">X</button>
+			</div>
+		</div>
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+	html {
+		font-family:'DM Serif Display', system-ui, sans-serif;
+	}
+	body{
+		justify-content: center;
+		
+	}
+	::-webkit-scrollbar {
+		width: 1px; 
+	}
+	::-webkit-scrollbar-track {
+		background: transparent 
+	}
+	::-webkit-scrollbar-thumb {
+		background: transparent 
+	}
+	::-webkit-scrollbar-thumb:hover {
+		background: transparent 
+	}
+</style>
+<style>
+	.fily{
+		filter: drop-shadow(rgb(255, 255, 255));
+	}
+	 @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+    .heartbeat {
+		filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+		filter: drop-shadow(0 0 10px rgb(3, 21, 119));
+		animation: heartbeat 1.5s infinite;
+    }
+	.fade {
+      transition: opacity 4s ease;
+    }
+    .hidden {
+      opacity: 0;
+    }
+    .visible {
+      opacity: 1;
+    }
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleButton = document.getElementById('toggleButton') as HTMLElement;
+      const floatingContainer = document.getElementById('floatingContainer')as HTMLElement;
+      const closeButton = document.getElementById('closeButton')as HTMLElement;
+
+      toggleButton.addEventListener('click', () => {
+        if (floatingContainer.classList.contains('hidden')) {
+          floatingContainer.classList.remove('hidden');
+          floatingContainer.classList.add('visible');
+        } else {
+          floatingContainer.classList.remove('visible');
+          floatingContainer.classList.add('hidden');
+        }
+      });
+
+      closeButton.addEventListener('click', () => {
+        floatingContainer.classList.remove('visible');
+        floatingContainer.classList.add('hidden');
+      });
+
+      window.addEventListener('scroll', () => {
+        if (floatingContainer.classList.contains('visible')) {
+          floatingContainer.classList.remove('visible');
+          floatingContainer.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+	

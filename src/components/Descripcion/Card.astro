@@ -1,0 +1,66 @@
+---
+import Button from '../Descripcion/Button.astro';
+import Links from './Links.astro';
+---
+<div
+    class="rounded-[30px] border-b-letra border-[2px] border-espejo flex flex-col md:flex-row md:w-1/2 p-6 bg-gradient-to-t from-[#a5a5a5] dark:from-degradadoclaro m-1">
+    <div class="md:w-3/4 text-oscur dark:text-primari">
+      <h1 class="text-[35px] font-bold top-5 py-2">
+        ¡Hola👋<br />Soy <span class="text-letra">Sergio Sabino💻</span>!
+      </h1>
+      <p class="text-lg py-1 text-left px-3">
+        <span class="dark:text-[#d6ff64] text-[#160577]">Ingeniero de Sstemas, Programador Full-Stack y tu vecino el hombre araña en el día</span>,"Transformando ideas
+        en experiencias digitales cautivadoras.
+      </p>
+      <p class="text-lg py-1 text-left px-3">
+        Apasionado por la innovación y la <span class="dark:text-[#d6ff64] text-[#160577]">creación de interfaces que deslumbran
+        y simplifican la vida digita.</span> 
+      </p>
+      <ul class="text-[15px]">
+        <li>
+          <span
+            class="px-8 w-2 h-6 text-letra inline-flex justify-center items-center"
+            >&checkmark;</span
+          > Dominio de tecnologías.
+        </li>
+        <li>
+          <span
+            class="px-8 w-2 h-6 text-letra inline-flex justify-center items-center"
+            >&checkmark;</span
+          > uso frameworks y bibliotecas.
+        </li>
+        <li>
+          <span
+            class="px-8 w-2 h-6 text-letra inline-flex justify-center items-center"
+            >&checkmark;</span
+          > Analisis diseño y UX/UI.
+        </li>
+        <li>
+          <span
+            class="px-8 w-2 h-6 text-letra inline-flex justify-center items-center"
+            >&checkmark;</span
+          > Aprendizaje continuo.
+        </li>
+      </ul>
+      <Button />
+    </div>
+    <div class="md:w-1/4 flex flex-col justify-between ">
+      <div class="flex flex-col justify-between">
+          <p class="text-center glow-text text-letra hover:text-primari overflow-hidden transform transition-transform hover:scale-105 font-bold">Sígueme en:</p>
+          <Links />
+      </div>
+    </div>
+  </div>
+  <div
+    class="top-6 sm:top-0 rounded-[30px] border-b-letra border-[2px] border-espejo relative bg-gradient-to-t dark:from-degradadoclaro from-[#a5a5a5] hover:from-degradadooscuro to-transparent m-1 md:w-1/2 overflow-hidden transform transition-transform hover:scale-105"
+  >
+    <img
+      src="/assets/images/sergiologo.png"
+      alt="Descripción de la imagen"
+      class="w-full rounded-[30px]"
+    />
+  </div>
+  <span
+    style="transform: rotate(-10deg);"
+    class="absolute w-[100px] h-[150px] lg:h-[100px] lg:w-[150px] rounded-full bg-gradient-to-tr dark:from-luz dark:to-luz1 from-[#b2ebdd] to-[#7a7a6f] opacity-40 blur-2xl left-0 top-[1660px] lg:top-[1400px]"
+  ></span>

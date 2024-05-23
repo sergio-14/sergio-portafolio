@@ -1,0 +1,103 @@
+---
+import { Icon } from "astro-icon/components";
+---
+<div class="flex  lg:px-14 justify-end lg:flex-col"> 
+    <p class="py-3 sm:m-0 m-1  rounded-lg iconon">
+        <a href="https://github.com/sergio-14" class="">
+            <Icon name="github" class="icono2 lg:w-12 lg:h-12 w-10 h-10" />
+        </a>
+    </p>
+    <p class="py-3 sm:m-0 m-1  rounded-lg iconon">
+        <a href="" class="">
+            <Icon name="linkedin" class="icono1 lg:w-12 lg:h-12 w-10 h-10" />
+        </a>
+    </p>
+    <p class="py-3 sm:m-0 m-1  rounded-lg iconon">
+        <a href="mailto:elmatadorsergio1234@gmail.com" class="">
+            <Icon name="gmail" class="icono3 lg:w-12 lg:h-12 w-10 h-10" />
+        </a>
+    </p>
+    <p class="py-3 sm:m-0 m-1  rounded-lg iconon">
+        <a href="" class="">
+            <Icon name="X_light" class="icono2 lg:w-12 lg:h-12 w-10 h-10" />
+        </a>
+    </p>
+    <p class="py-3 sm:m-0 m-1  rounded-lg iconon">
+        <a href="http://api.whatsapp.com/send?phone=73227139&text=Hola,quiero-agendar-un-servicio!" class="">
+            <Icon name="whatsapp" class="icono lg:w-12 lg:h-12 w-10 h-10" />
+        </a>
+    </p>
+</div>
+
+<style>
+  .iconon {
+    position: relative;
+  }
+  .icono {
+    background: rgba(158, 152, 152, 0.212);
+    padding: 6px;
+    border-radius: 12px;
+    transition: filter 0.3s;
+  }
+  /* Efecto Hover Neon */
+  .iconon:hover .icono {
+    filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+    filter: drop-shadow(0 0 10px rgb(255, 255, 10))
+      drop-shadow(0 0 20px rgb(64, 255, 6))
+      drop-shadow(0 0 50px rgb(151, 255, 14));
+    opacity: 90%;
+    border: 1px; /* Ancho del borde */
+    border-style: solid; /* Estilo del borde */
+    border-color: #0acc2a;
+  }
+  .icono1 {
+    background: rgba(158, 152, 152, 0.212);
+    padding: 6px;
+    border-radius: 12px;
+    transition: filter 0.3s;
+  }
+  /* Efecto Hover Neon */
+  .iconon:hover .icono1 {
+    filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255))
+      drop-shadow(0 0 20px rgb(6, 184, 255))
+      drop-shadow(0 0 50px rgb(0, 81, 255));
+    opacity: 90%;
+    border: 1px; /* Ancho del borde */
+    border-style: solid; /* Estilo del borde */
+    border-color: #0b6ddd;
+  }
+  .icono2 {
+    background: rgba(158, 152, 152, 0.212);
+    padding: 6px;
+    border-radius: 12px;
+    transition: filter 0.3s;
+  }
+  /* Efecto Hover Neon */
+  .iconon:hover .icono2 {
+    filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+    filter: drop-shadow(0 0 10px rgb(225, 255, 246))
+      drop-shadow(0 0 20px rgb(184, 235, 255))
+      drop-shadow(0 0 50px rgb(255, 255, 255));
+    opacity: 90%;
+    border: 1px; /* Ancho del borde */
+    border-style: solid; /* Estilo del borde */
+    border-color: #ffffff;
+  }
+  .icono3 {
+    background: rgba(158, 152, 152, 0.212);
+    padding: 6px;
+    border-radius: 12px;
+    transition: filter 0.3s;
+  }
+  /* Efecto Hover Neon */
+  .iconon:hover .icono3 {
+    filter: brightness(150%) saturate(180%) hue-rotate(45deg);
+    filter: drop-shadow(0 0 10px rgb(255, 34, 34)) drop-shadow(0 0 20px rgb(253, 147, 7))
+      drop-shadow(0 0 50px rgb(255, 0, 34));
+    opacity: 90%;
+    border: 1px; /* Ancho del borde */
+    border-style: solid; /* Estilo del borde */
+    border-color: #dd0b0b;
+  }
+</style>

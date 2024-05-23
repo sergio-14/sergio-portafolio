@@ -1,0 +1,46 @@
+---
+import HamburgerButton from "./Panel/HamburgerButton.astro";
+import Navigation from "./Panel/Navigation.astro";
+import ModeSwitch from "./Panel/ModeSwitch.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<style>
+  .transparent-header {
+  }
+  .glass-header {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+  }
+</style>
+<div class="navigation fixed glass-header flex-1 z-10 hidden top-0 left-0 w-full bg-primari dark:bg-oscur transition-all duration-300 p-7 pt-[112px]  " id="navigation_wrapper">
+  <Navigation />
+</div>
+<header
+  id="header"
+  class="fixed top-0 left-0 w-full border-b-[1px] rounded-b-lg border-[#bbff00] dark:bg-espejo bg-espejoclaro mx-auto px-7 py-2 flex flex-initial flex-row gap-10 items-center justify-between transition-all duration-300 z-20"
+>
+  <div class="logo flex-none">
+    <Icon name="gradio" class="lg:w-12 lg:h-12 w-10 h-10 " />
+  </div>
+  <div class="navigation flex-1 hidden md:block">
+    <Navigation />
+  </div>
+  <div class="relative flex flex-initial flex-row items-center gap-5">
+    <ModeSwitch />
+    <HamburgerButton />
+  </div>
+</header>
+<script>
+  window.addEventListener("scroll", function () {
+    const header = document.getElementById("header") as HTMLElement;
+    if (window.scrollY > 0) {
+      header.classList.add("glass-header");
+      header.classList.remove("transparent-header");
+    } else {
+      header.classList.remove("glass-header");
+      header.classList.add("transparent-header");
+    }
+  });
+</script>
+<!-- <Icon name="logo" />  -->

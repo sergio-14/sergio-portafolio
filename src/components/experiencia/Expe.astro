@@ -1,0 +1,155 @@
+---
+import { Icon } from "astro-icon/components";
+import Cubo from "../experiencia/Cubo.astro";
+---
+
+<article id="experiencia" class="relative h-[780px] dark:text-primari text-oscur">
+  <h2 class="text-center font-extrabold text-[30px] lg:text-[50px] py-16">
+    Experiencia Laboral
+  </h2>
+  <div class="flex">
+    <div class="absolute lg:left-48 left-4">
+      <h3 class="font-bold lg:text-[34px] text-[20px]">
+        Amplio Desarrollo de <br /><span class="text-letra">Sistemas</span> Informáticos.
+      </h3>
+      <pre
+        class="lg:text-[15px] text-[10px] text-[#626e74]">11 de May de 2022     25 de Dic de 2023</pre>
+      <p class="lg:w-96 w-56 text-left text-[10px] lg:text-[17px]">
+        Actividades relacionadas con la creación, mantenimiento y mejora de
+        sistemas de software en Carrera Ingenieria de Sistemas UAB
+      </p>
+      <ul class="contenedores flex">
+        <li class="flex lg:m-2 m-2">
+          <Icon class="w-6 h-6 lg:w-8 lg:h-8" name="payload" />
+          <ul class="poo text-letra">
+            <li class="pooo font-bold">En Diseño de lógica deprogramación</li>
+            <li class="pooo font-bold">En Auxiliar de bases de datos I y II</li>
+            <li class="pooo font-bold">En Auxiliar Materias Software I y II</li>
+            <li class="pooo font-bold">En Análisis de sistemas</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="cubo absolute lg:top-[400px] top-[500px] end-16 lg:end-72">
+    <Cubo />
+  </div>
+  <div class="absolute top-[650px] lg:top-[520px] lg:end-0 end-0">
+    <img
+      class="w-[160px] h-[120px] lg:w-[460px] lg:h-[260px]"
+      src="/public/assets/images/robot.png"
+      alt=""
+    />
+  </div>
+  <span
+    class="absolute w-[150px] h-[150px] lg:top-36 top-36 lg:h-[300px] lg:w-[300px] rounded-full bg-gradient-to-tr dark:from-[#c3ff36] dark:to-[#02f7ff] from-[#b2ebdd] to-[#55554f] opacity-40 blur-3xl left-0"
+  >
+  </span>
+  <span
+    style="transform: rotate(10deg);"
+    class="absolute top-[700px] w-[200px] h-[50px] lg:h-[100px] lg:w-[400px] rounded-full bg-gradient-to-tr dark:from-[#ebff36] dark:to-[#9a02ff] from-[#b2ebdd] to-[#57574f] opacity-70 blur-3xl end-3 lg:end-24 lg:top-[700px]"
+  >
+  </span>
+  <span
+    style="transform: rotate(10deg);"
+    class="absolute w-[100px] h-[100px] lg:h-[100px] lg:w-[100px] rounded-full bg-gradient-to-tr dark:from-[#bdff23] dark:to-[#02b7ff] from-[#b2ebdd] to-[#494942] opacity-50 blur-3xl lg:top-[420px] top-[500px] end-4 lg:end-56"
+  >
+  </span>
+</article>
+<article class="relative h-[500px] lg:h-[600px]">
+  <div class="flex dark:text-primari text-oscur">
+    <div class="absolute lg:end-56 end-4">
+      <h3 class="text-right end-0 font-bold lg:text-[34px] text-[20xp]">
+        Desarrollo de <span class="text-letra">Sitios </span> Webs
+      </h3>
+      <pre
+        class="lg:text-[15px] text-right text-[10px] text-[#626e74]"> 23 de Sep de 2023        Actualidad..</pre>
+      <p class="lg:w-96 w-56 text-right py-1 lg:text-[15px] text-[10px]">
+        Desarrollo y Implementacion del Sistema de Modalidad de Graduacion para
+        la Carrera de Ingenieria de Sistemas de la Universida Autonoma del Beni
+        "Jose Ballivian"
+      </p>
+      <p class="lg:w-96 w-56 text-right py-1 lg:text-[15px] text-[10px]">
+        Clases Particulares de Gestion de Base de datos.
+      </p>
+      <p class="lg:w-96 w-56 text-right py-1 lg:text-[15px] text-[10px]">
+        Asistente y Soporte en Talleres ITEC.
+      </p>
+    </div>
+  </div>
+  <div class="absolute top-[130px] lg:top[30px] left-3 lg:left-36">
+    <img
+      class="w-[200px] h-[200px] lg:w-[400px] lg:h-[400px]"
+      src="/public/assets/images/developer.gif"
+      alt=""
+    />
+  </div>
+  <span
+    class="absolute w-[150px] h-[150px] lg:top-44 top-56 lg:h-[300px] lg:w-[300px] rounded-full bg-gradient-to-tr dark:from-[#c3ff36] dark:to-[#02f7ff] from-[#b2ebdd] to-[#53534e] lg:opacity-30 opacity-50 blur-3xl left-0"
+  ></span>
+  <span
+    class="absolute w-[300px] h-[40px] top-96 lg:top-72 lg:h-[200px] lg:w-[400px] rounded-full bg-gradient-to-tr dark:from-[#ff6e34] dark:to-[#fbff02] from-[#b2ebdd] to-[#585851] lg:opacity-30 opacity-50 blur-3xl lg:left-72 left-20"
+  ></span>
+</article>
+<style>
+  .cubo {
+    animation: moverArriba 2s infinite alternate;
+  }
+
+  @keyframes moverArriba {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+  .contenedores {
+    display: flex;
+    width: 720px;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 40px;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 768px) {
+    .contenedores {
+      width: 300px;
+      padding-left: 1px;
+      font-size: 13px;
+      line-height: 40px;
+    }
+  }
+  .poo {
+    list-style: none;
+    padding-left: 10px;
+    animation: cambiar 12s infinite;
+  }
+
+  @keyframes cambiar {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+    20%,
+    95% {
+      margin-top: 0;
+    }
+    25% {
+      margin-top: -40px;
+    }
+    50% {
+      margin-top: -40px;
+    }
+    55% {
+      margin-top: -80px;
+    }
+    80% {
+      margin-top: -80px;
+    }
+    85% {
+      margin-top: -120px;
+    }
+  }
+</style>

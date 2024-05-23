@@ -1,0 +1,141 @@
+---
+import { Icon } from "astro-icon/components"
+---
+<style>
+    .contenido {
+    height: 80px;
+    width: 200px;
+    background-color: #000025;
+    border-radius: 6%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contenido::before {
+    content: "";
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    background-image: conic-gradient(
+      rgba(208, 255, 0, 0.555) 20deg,
+      transparent 120deg
+    );
+    animation: rotar 20s linear infinite;
+  }
+
+  @keyframes rotar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .contenido::after {
+    content: "";
+    position: absolute;
+    width: 197px;
+    height: 77px;
+    background-image: linear-gradient(rgb(7, 11, 58),rgb(3, 0, 17));
+    border-radius: 6%;
+  }
+  @media (max-width: 768px) {
+  .contenido {
+    width: 150px;
+    height: 55px;
+  }
+  .contenido::after {
+    width: 147px;
+    height: 52px;
+  }
+}
+
+</style>
+
+<style>
+    @keyframes scrolll {
+            0% { transform: translateX(-130%); }
+            100% { transform: translateX(0); }
+        }
+        .scroll-container {
+            display: flex;
+            width: 200%;
+            animation: scrolll 30s linear infinite;
+        }
+        .scroll-item {
+            flex: 0 0 auto;
+            width: 10%;
+        }
+</style>
+<style>
+    .duno {
+        mask-image: linear-gradient(to right, transparent, rgb(255, 248, 248) 20%, rgb(255, 248, 248) 80%, transparent);
+    }
+    
+</style>
+
+<div class="overflow-hidden w-full duno dark:bg-oscur bg-primari ">
+    <h2 class=" text-right lg:py-5 py-5 lg:px-7 px-4 font-extrabold text-[15px] 
+    lg:text-[20px] text-oscur dark:text-primari">
+        <span class="text-letra">TECNOLOGÍAS : </span>  FRONTEND  Y  BACKEND
+    </h2>
+    <div  class="scroll-container px-16">
+        <!-- SVGs -->
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="bootstrap" /><pre class="z-10"> BOOTSTRAP</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="html5" /><pre class="z-10"> HTML5</pre>
+        </div>
+        <div class="scroll-item contenido">
+            <Icon class="size-10 z-10"  name="css" /><pre class="z-10"> CSS</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="tailwindcss" /><pre class="z-10"> TAILWIND</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="javascript" /><pre class="z-10"> JAVASCRIPT</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="figma" /><pre class="z-10"> FIGMA</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="astro" /><pre class="z-10"> ASTRO</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="django" /><pre class="z-10"> DJANGO</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="laravel" /><pre class="z-10"> LARAVEL</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="python" /><pre class="z-10"> PYTHON</pre>
+        </div>
+        <div class="scroll-item contenido">
+            <Icon class="size-10 z-10"  name="git" /><pre class="z-10"> GIT</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="github" /><pre class="z-10"> GITHUB</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="mysql" /><pre class="z-10"> MYSQL</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="netlify" /><pre class="z-10"> NETLIFY</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="postgresql" /><pre class="z-10"> POSTGRESQL</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="npm" /><pre class="z-10"> NPM</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="nextjs_logo_light" /><pre class="z-10"> NEXTJS</pre>
+        </div>
+    </div>
+</div>
+

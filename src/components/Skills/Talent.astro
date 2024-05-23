@@ -1,0 +1,122 @@
+---
+import { Icon } from "astro-icon/components"
+---
+<style>
+    .contenido {
+    height: 80px;
+    width: 200px;
+    background-color: #000025;
+    border-radius: 6%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contenido::before {
+    content: "";
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    background-image: conic-gradient(
+      rgba(208, 255, 0, 0.555)20deg,
+      transparent 120deg
+    );
+    animation: rotarr 20s linear infinite;
+  }
+
+  @keyframes rotarr {
+    from {
+      transform: rotate(-360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .contenido::after {
+    content: "";
+    position: absolute;
+    width: 197px;
+    height: 77px;
+    background-image: linear-gradient(rgb(7, 11, 58),rgb(3, 0, 17));
+    border-radius: 6%;
+  }
+
+  @media (max-width: 768px) {
+  .contenido {
+    width: 150px;
+    height: 55px;
+  }
+  .contenido::after {
+    width: 147px;
+    height: 52px;
+  }
+}
+
+ 
+</style>
+
+<style>
+    @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-130%); }
+        }
+        .scroll-container {
+            display: flex;
+            width: 200%;
+            animation: scroll 30s linear infinite;
+        }
+        .scroll-item {
+            flex: 0 0 auto;
+            width: 10%;
+        }
+</style>
+<style>
+    .duno {
+        mask-image: linear-gradient(to right, transparent, rgb(255, 248, 248) 20%, rgb(255, 248, 248) 80%, transparent);
+    }
+    
+</style>
+
+<div class="overflow-hidden w-full duno dark:bg-oscur bg-primari">
+    <h2 class="text-oscur dark:text-primari text-left lg:px-7 lg:py-5 py-5 px-4 font-extrabold text-[15px] 
+    lg:text-[20px]">
+        <span class="text-letra">TECNOLOGÍAS : </span>  APRENDIENDO...
+    </h2>
+    <div  class="scroll-container px-16">
+        <!-- SVGs -->
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="mariadb" /><pre class="z-10"> MARIA DB</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="mongodb-wordmark" /><pre class="z-10"> MONGO DB</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="openai" /><pre class="z-10"> OPEN IA</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="react" /><pre class="z-10"> REACT</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="angular" /><pre class="z-10"> ANGULAR</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="docker" /><pre class="z-10"> DOCKER</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="svelte" /><pre class="z-10"> SVELTE</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="typescript" /><pre class="z-10"> TYPE SCRIPT</pre>
+        </div>
+        <div class="scroll-item contenido">
+            <Icon class="size-10 z-10"  name="wordpress" /><pre class="z-10"> WORD PRESS</pre>
+        </div>
+        <div class="scroll-item mx-4 contenido">
+            <Icon class="size-10 z-10"  name="vue" /><pre class="z-10"> VUE</pre>
+        </div>
+    </div>
+</div>
+
