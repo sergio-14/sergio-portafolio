@@ -10,14 +10,14 @@ import { Icon } from "astro-icon/components"
  <audio id="audioPlayer"></audio>
  <div id="musicControls">
    <button id="prevButton">
-     <Icon name="left" class="size-8 pt-2" />
+     <Icon name="left" class="size-8 pt-2 overflow-hidden transform transition-transform hover:scale-105" />
    </button>
    <button id="playPauseButton">
      <Icon name="play" class="size-8 pt-2" />
    </button>
    <button id="nextButton">
      <!-- Icono de "siguiente" -->
-     <Icon name="right" class="size-8 pt-2" />
+     <Icon name="right" class="size-8 pt-2 overflow-hidden transform transition-transform hover:scale-105" />
    </button>
  </div>
 
@@ -44,7 +44,7 @@ import { Icon } from "astro-icon/components"
     ];
   
     function updatePlayPauseButton() {
-      playPauseButton.innerHTML = isPlaying ? "▶" : "II";
+      playPauseButton.innerHTML = isPlaying ? "II" : "▶";
     }
   
     function playPause() {
