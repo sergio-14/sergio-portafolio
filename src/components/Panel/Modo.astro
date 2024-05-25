@@ -1,0 +1,140 @@
+---
+
+---
+<style>
+    * {
+        box-sizing: border-box;
+        transition: 0.5s;
+    }
+
+    input {
+        display: none;
+    }
+
+    .display {
+        width: 70px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    label {
+        width: 85px;
+        height: 35px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.082);
+        box-shadow: 10px 10px 30px rgba(194, 193, 193, 0.11) inset;
+        border: 1px solid rgba(128, 123, 123, 0.651);
+        cursor: pointer;
+        position: relative;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        border-radius: 99px;
+        background: rgb(211, 209, 209);
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05), -10px -10px 30px rgba(0, 0, 0, 0.05) inset;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(10%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    svg {
+        width: 23px;
+        position: absolute;
+    }
+
+    .moon {
+        margin-top: -100%;
+        color: white;
+        opacity: 0;
+    }
+
+    .sun {
+        color: #ff7c02;
+        margin-top: 0%;
+        opacity: 1;
+    }
+
+    input[type=checkbox]:checked + .display label {
+        background: rgba(255, 255, 255, 0.082);
+        box-shadow: 10px 10px 30px rgba(194, 193, 193, 0.11) inset;
+    }
+
+    input[type=checkbox]:checked + .display label .circle {
+        left: 100%;
+        transform: translate(-110%, -50%);
+        background: #09002c;
+        box-shadow: 10px 10px 20px rgba(61, 59, 59, 0.267), -10px -10px 30px rgba(27, 27, 27, 0.267) inset;
+    }
+
+    input[type=checkbox]:checked + .display label .circle .sun {
+        margin-top: 100%;
+        opacity: 0;
+    }
+
+    input[type=checkbox]:checked + .display label .circle .moon {
+        margin-top: 0%;
+        opacity: 1;
+    }
+
+    label:active .circle {
+        width: 35px;
+    }
+
+    /* Dark mode styles */
+    .dark {
+        background-color: #121212;
+        color: #ffffff;
+    }
+</style>
+
+<input type="checkbox" id="toggle">
+
+<div class="display">
+    <label for="toggle">
+        <div class="circle group" id="mode_switcher" title="Switch mode">
+            <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+            </svg>
+            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+            </svg>
+        </div>
+    </label>
+</div>
+
+<script is:inline>
+    const setDarkMode = () => {
+        if (localStorage.darkMode === 'true' || (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            localStorage.darkMode = 'true';
+            document.getElementById('toggle').checked = true;
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.darkMode = 'false';
+            document.getElementById('toggle').checked = false;
+        }
+    }
+
+    setDarkMode();
+    
+    document.getElementById('toggle').addEventListener('change', function () {
+        if (this.checked) {
+            document.documentElement.classList.add('dark');
+            localStorage.darkMode = 'true';
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.darkMode = 'false';
+        }
+    });
+
+    document.addEventListener('astro:after-swap', setDarkMode);
+</script>

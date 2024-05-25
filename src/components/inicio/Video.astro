@@ -1,50 +1,32 @@
 <style>
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-height: 560px;
-      overflow: hidden;
-      border-radius: 0.5rem;
-      margin: auto;
-    }
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    .humo {
+  
+  .humo {
     mask-image: linear-gradient(rgb(255, 248, 248) 80%, transparent);
+  }
+</style>
+<div id="imageContainer" class="duno humo absolute inset-x-0 top-0 w-full rounded-b-lg mx-auto my-0">
+  <img id="imageElement" class="h-[620px]  lg:h-[590px] w-full lg:w-full" src="" alt="Slideshow Image">
+</div>
+
+<script>
+  const imageUrls = [
+    "/assets/User/p1.gif",
+    "/assets/User/p3.gif",
+  ];
+
+  let currentImageIndex = 0;
+
+  changeImage();
+  setInterval(changeImage, 15000);
+
+  function changeImage() {
+    const imageElement = document.getElementById("imageElement") as HTMLImageElement;
+
+    imageElement.src = imageUrls[currentImageIndex];
+    currentImageIndex++;
+
+    if (currentImageIndex >= imageUrls.length) {
+      currentImageIndex = 0;
     }
-  </style>
-  <div id="videoContainer" class="duno humo absolute inset-x-0 top-0 w-full h-[620px] lg:h-[590px] rounded-b-lg mx-auto my-0">
-    <video id="videoElement" autoplay muted loop>
-      <source id="videoSource" src="" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <script>
-    const videoUrls = [
-      "/assets/User/puerto.mp4",
-      "/assets/User/ww.mp4",
-    ];
-
-    let currentIndex = 0;
-
-    changeVideo();
-    setInterval(changeVideo, 14000);
-
-    function changeVideo() {
-      const videoElement = document.getElementById("videoElement") as HTMLVideoElement;
-      const videoSource = document.getElementById("videoSource") as HTMLSourceElement;
-
-      videoSource.src = videoUrls[currentIndex];
-      videoElement.load();
-      videoElement.play();
-      currentIndex++;
-
-      if (currentIndex >= videoUrls.length) {
-        currentIndex = 0;
-      }
-    }
-  </script>
+  }
+</script>
