@@ -5,16 +5,17 @@
   }
 </style>
 <div id="imageContainer" class="duno humo absolute inset-x-0 top-0 w-full rounded-b-lg mx-auto my-0">
-  <img id="imageElement" class="h-[610px]  lg:h-[590px] w-full lg:w-full" src="" alt="Slideshow Image">
+  <img id="imageElement" class="h-[610px] lg:h-[590px] w-full lg:w-full" src="" alt="">
 </div>
 
 <script>
   const imageUrls = [
-    "/assets/User/p1.gif",
     "/assets/User/p3.gif",
+    "/assets/User/p1.gif",
   ];
 
-  let currentImageIndex = 0;
+  let currentImageIndex = -1;
+  let lastImageIndex = -1;
 
   changeImage();
   setInterval(changeImage, 14000);
@@ -22,11 +23,12 @@
   function changeImage() {
     const imageElement = document.getElementById("imageElement") as HTMLImageElement;
 
-    imageElement.src = imageUrls[currentImageIndex];
-    currentImageIndex++;
+    // Ensure the new index is different from the last index
+    do {
+      currentImageIndex = Math.floor(Math.random() * imageUrls.length);
+    } while (currentImageIndex === lastImageIndex);
 
-    if (currentImageIndex >= imageUrls.length) {
-      currentImageIndex = 0;
-    }
+    imageElement.src = imageUrls[currentImageIndex];
+    lastImageIndex = currentImageIndex;
   }
 </script>
